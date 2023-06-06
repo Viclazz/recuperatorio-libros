@@ -10,11 +10,14 @@ function NuevoLibro() {
     evento.preventDefault();
     let cuerpo = {
       titulo: evento.target.title.value,
-      id_autor: evento.target.author.value,
-      id_categoria: evento.target.category.value,
+      editorial: evento.target.editorial.value,
+      descripcion:evento.target.descripcion.value,
+      fecha_edicion:evento.target.fecha_edicion.value,
+      id_autores: evento.target.author.value,
+      id_categorias: evento.target.category.value
     };
-    console.log(cuerpo);
-    fetch(`http://127.0.0.1:3001/api/Libros`, {
+    //console.log(cuerpo);
+    fetch(`http://127.0.0.1:3001/api/nuevoLibro`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,7 +27,7 @@ function NuevoLibro() {
       .then((respuesta) => {
         respuesta.json().then((resultado) => {
           console.log(resultado);
-          navigate("/libros");
+          //navigate("/libros");
         });
       })
       .catch((error) => {
@@ -33,7 +36,7 @@ function NuevoLibro() {
   };
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:3001/api/categorias`)
+    fetch(`http://127.0.0.1:3001/api/librosPorCategoria`)
       .then((respuesta) => {
         respuesta.json().then((resultado) => {
           setCategorias(resultado);
@@ -42,7 +45,7 @@ function NuevoLibro() {
       .catch((error) => {
         console.log(error);
       });
-    fetch(`http://127.0.0.1:3001/api/autores`)
+    fetch(`http://127.0.0.1:3001/api/autor`)
       .then((respuesta) => {
         respuesta.json().then((resultado) => {
           setAutores(resultado);
@@ -77,11 +80,29 @@ function NuevoLibro() {
                               value={autor.id}
                               key={`autor-list-${autor.id}`}
                             >
-                              {autor.nombre}
+                              {autor.nombre} {autor.apellido}
                             </option>
                           );
                         })}
                     </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="section-title">Editorial</td>
+                  <td>
+                    <input type="text" id="editorial" name="editorial" ></input>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="section-title">Descripción</td>
+                  <td>
+                    <input type="text" id="descripcion" name="descripcion"></input>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="section-title">Fecha de edición</td>
+                  <td>
+                    <input type="date" id="fecha_edicion" name="fecha_edicion"></input>
                   </td>
                 </tr>
                 <tr>
@@ -103,6 +124,7 @@ function NuevoLibro() {
                     </select>
                   </td>
                 </tr>
+
               </tbody>
             </table>
             <button>Guardar</button>

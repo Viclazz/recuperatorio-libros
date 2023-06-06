@@ -25,6 +25,7 @@ function App() {
       <Route path="libros" element={<Libros />} />
       <Route path="libro/:id" element={<Libro />} />
       <Route path="categoria" element={<Categorias />} />
+      <Route path="nuevoLibro" element={<NuevoLibro />} />
       </Routes>
       </div>
     </div>

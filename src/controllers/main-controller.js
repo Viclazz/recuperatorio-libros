@@ -23,17 +23,36 @@ module.exports = {
       });
   },
   LibroNuevo: (req, res) =>{
-    console.log(req.body)
+    
     let nuevoLibro ={
       titulo:req.body.titulo,
       editorial:req.body.editorial,
       descripcion:req.body.descripcion,
       fecha_edicion:req.body.fecha_edicion,
-      id_autores: req.body.autor,
-      id_categorias:req.body.categoria
+      id_autores: parseInt(req.body.id_autores),
+      id_categorias:parseInt(req.body.id_categorias)
     }
+    db.Libro.create(nuevoLibro)
+    console.log(nuevoLibro)
     res.json (req.body)
 
+  },
+
+  Autores: (req, res) => {
+    let autor = db.Autor.findAll({
+      attributes: ["id", "nombre", "apellido"],
+    })
+      .then((Autores) => {
+        res.json(Autores);
+      })
+      .catch((error) => {
+        console.log(error);
+        res.status(500).json({
+          codigo: 500,
+          mensaje: "Error",
+          error: error.message,
+        });
+      });
   },
 
   Categorias: (req, res) => {
