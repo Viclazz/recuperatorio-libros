@@ -3,7 +3,7 @@ var router = express.Router();
 var mainController = require('../controllers/main-controller');
 
 router.get('/buscarTodosLosLibros', mainController.libros);         
-//router.get('/buscarLibro', mainController.mainRouter)    
+router.post('/nuevoLibro', mainController.LibroNuevo)    
 router.get('/buscarLibro', mainController.filtroPorLibro) 
 router.get('/librosPorCategoria', mainController.Categorias)  
 

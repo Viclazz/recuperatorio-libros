@@ -22,6 +22,19 @@ module.exports = {
         console.log(error);
       });
   },
+  LibroNuevo: (req, res) =>{
+    console.log(req.body)
+    let nuevoLibro ={
+      titulo:req.body.titulo,
+      editorial:req.body.editorial,
+      descripcion:req.body.descripcion,
+      fecha_edicion:req.body.fecha_edicion,
+      id_autores: req.body.autor,
+      id_categorias:req.body.categoria
+    }
+    res.json (req.body)
+
+  },
 
   Categorias: (req, res) => {
     let listaCategoria = db.Categoria.findAll({
@@ -69,11 +82,12 @@ module.exports = {
   libro: (req, res) => {
     let libro = db.Libro.findOne({
       include: [{ model: db.Autor }, { model: db.Categoria }],
-      where: {id: req.params.id}
+      where: { id: parseInt(req.params.id) },
     });
     Promise.all([libro])
       .then(([libro]) => {
-        let resultado = {
+        if (libro) {
+          let resultado = {
             id: libro.id,
             titulo: libro.titulo,
             editorial: libro.editorial,
@@ -82,10 +96,15 @@ module.exports = {
             autor: `${libro.Autor.nombre} ${libro.Autor.apellido}`,
             nacionalidad: libro.Autor.nacionalidad,
             fecha_nacimiento: libro.Autor.fecha_nacimiento,
-            categoria: libro.Categorium.nombre
+            categoria: libro.Categorium.nombre,
+          };
+
+          res.json(resultado);
         }
-        
-        res.json(resultado);
+        else {
+          res.status(400);
+				res.json(null);
+        }
       })
       .catch((error) => {
         console.log(error);

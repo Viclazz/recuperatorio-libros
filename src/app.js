@@ -1,9 +1,11 @@
 const express = require("express")
 const path = require("path")
+const cors = require ("cors")
 
 const app = express()
 
 const port = 3001
+app.use(cors())
 const apiRouter = require("./routers/main_router")
 
 app.get("/", (req, res) =>{
