@@ -11,13 +11,31 @@ function Libros() {
     },[])
 	return (
 		<>
-        {libros.length >0 && libros.map((libro, indice)=>{
-            return <div key={"libro-" + indice
-        }>{libro.titulo}</div>
-
-        })}
-			
-            <div>Soy un libro</div>
+       <div className="card-holder">
+				{libros.length > 0 &&
+					libros.map((libro, index) => {
+						return (
+							<Link
+								to={`/libro/${libro.id}`}
+								className="card"
+								key={`lista-libro-${index}`}
+							>
+								<div>
+									<div className="cardTitle">Libro:</div>
+									<div className="cardVar">{libro.titulo}</div>
+								</div>
+								<div>
+									<div className="cardTitle">Autor:</div>
+									<div className="cardVar">{libro.autor}</div>
+								</div>
+								<div>
+									<div className="cardTitle">Categoria:</div>
+									<div className="cardVar">{libro.categoria}</div>
+								</div>
+							</Link>
+						);
+					})}
+			</div>
 		</>
 	);
 }

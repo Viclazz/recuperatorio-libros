@@ -1,16 +1,27 @@
 import { Link } from "react-router-dom";
 
 function NavBar() {
-	return (
-		<>
-			<navbar className="">
-				<Link to={"/libros"}>libro</Link>
-                <h4>Libros</h4>
-                <h4>Categoria</h4>
-                <h4>Nuevo Libro</h4>
-            </navbar>
-		</>
-	);
+  return (
+    <>
+      <div className="navbar">
+        <ul>
+          <Link to={`/libros`} className="button">
+            Libros
+          </Link>
+        </ul>
+        <ul>
+          <Link to={`/categorias`} className="button">
+            Categorias
+          </Link>
+        </ul>
+		<ul>
+        <Link to={`/nuevoLibro`} className="button">
+          Nuevo Libro
+        </Link>
+		</ul>
+      </div>
+    </>
+  );
 }
 
 export default NavBar;

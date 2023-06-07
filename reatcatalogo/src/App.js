@@ -4,7 +4,7 @@ import Libros from './components/Libros';
 import Libro from './components/Libro';
 import NavBar from './components/NavBar';
 import Categorias from './components/Categorias';
-import FiltroPorLibros from './components/FiltroPorLibro';
+import FiltroPorLibro  from './components/FiltroPorLibro';
 import NuevoLibro from './components/NuevoLibro';
 import {                                            
     BrowserRouter as Router,
@@ -26,6 +26,7 @@ function App() {
       <Route path="libro/:id" element={<Libro />} />
       <Route path="categoria" element={<Categorias />} />
       <Route path="nuevoLibro" element={<NuevoLibro />} />
+      <Route path="busqueda/:titulo" element={<FiltroPorLibro/>} />
       </Routes>
       </div>
     </div>
