@@ -57,7 +57,7 @@ function NuevoLibro() {
   }, []);
   return (
     <>
-      <div>
+      <div className="div-form">
         <div>
           <form onSubmit={crearLibro} method="POST">
             <table>

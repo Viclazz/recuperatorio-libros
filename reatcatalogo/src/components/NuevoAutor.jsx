@@ -32,7 +32,7 @@ function NuevoAutor() {
 
   return (
     <>
-      <div>
+      <div className="div-form">
         <div>
           <form onSubmit={crearAutor} method="POST">
             <table>

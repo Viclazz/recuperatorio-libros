@@ -17,7 +17,7 @@ let { id } = useParams();
 	   {libro == null ? (
 				<div>no hay libro</div>
 			) :(
-			<div>
+			<div className="div-detalle">
 				<div className="section-title">Titulo: {libro.titulo}</div>
 				<div className="section-title">Autor: {libro.autor}</div>
 				<div className="section-title">Categorias: {libro.categoria}</div>

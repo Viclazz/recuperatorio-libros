@@ -20,6 +20,10 @@
     position: relative;
 }
 
+.App {
+	min-height: 100vh;
+}
+
 .form-buscar {
     position: absolute;
     bottom: 1rem;
@@ -75,6 +79,7 @@
 	justify-content:flex-start;
 	right: 1rem;
 	max-width: 15rem;
+	height: 100%;
 }
 
 .button {
@@ -91,6 +96,22 @@
 	box-shadow: 0rem 0rem .4rem var(--lavanda);
 	border: 1px;;
 	
+}
+
+.div-form{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.div-detalle{
+	background-color: #FFFFF0;
+	padding: 1.5rem;
+	width: 25%;
+	border-radius: .2rem;
+	box-shadow: .1rem .1rem 2rem var(--violeta);
+	/*justify-content: center;*/
+	text-align: center;
 }
 
 .section{
