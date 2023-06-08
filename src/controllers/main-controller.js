@@ -38,6 +38,20 @@ module.exports = {
 
   },
 
+  NuevoAutor: (req, res) =>{
+    
+    let autorNuevo ={
+      nombre:req.body.nombre,
+      apellido:req.body.apellido,
+      fecha_nacimiento:req.body.fecha_nacimiento,
+      nacionalidad:req.body.nacionalidad,
+    }
+    db.Autor.create(autorNuevo)
+    console.log(autorNuevo)
+    res.json (req.body)
+
+  },
+
   Autores: (req, res) => {
     let autor = db.Autor.findAll({
       attributes: ["id", "nombre", "apellido"],

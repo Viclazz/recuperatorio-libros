@@ -10,13 +10,18 @@ function NavBar() {
           </Link>
         </ul>
         <ul>
-          <Link to={`/categorias`} className="button">
+          <Link to={`/categoria`} className="button">
             Categorias
           </Link>
         </ul>
 		<ul>
         <Link to={`/nuevoLibro`} className="button">
           Nuevo Libro
+        </Link>
+		</ul>
+    <ul>
+        <Link to={`/nuevoAutor`} className="button">
+          Nuevo Autor
         </Link>
 		</ul>
       </div>

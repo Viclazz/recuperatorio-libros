@@ -4,6 +4,7 @@ var mainController = require("../controllers/main-controller");
 
 router.get("/buscarTodosLosLibros", mainController.libros);
 router.post("/nuevoLibro", mainController.LibroNuevo);
+router.post("/autorNuevo", mainController.NuevoAutor);
 router.post("/buscarLibro", mainController.filtroPorLibro);
 router.get("/librosPorCategoria", mainController.Categorias);
 router.get("/autor", mainController.Autores)

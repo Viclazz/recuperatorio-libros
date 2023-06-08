@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import Header from './components/Header';
 import Libros from './components/Libros';
 import Libro from './components/Libro';
@@ -6,11 +5,11 @@ import NavBar from './components/NavBar';
 import Categorias from './components/Categorias';
 import FiltroPorLibro  from './components/FiltroPorLibro';
 import NuevoLibro from './components/NuevoLibro';
+import NuevoAutor from './components/NuevoAutor';
 import {                                            
     BrowserRouter as Router,
     Routes,
     Route,
-    Link
 } from "react-router-dom";
 import './App.css';
 
@@ -27,6 +26,7 @@ function App() {
       <Route path="categoria" element={<Categorias />} />
       <Route path="nuevoLibro" element={<NuevoLibro />} />
       <Route path="busqueda/:titulo" element={<FiltroPorLibro/>} />
+      <Route path="nuevoAutor" element={<NuevoAutor/>} />
       </Routes>
       </div>
     </div>

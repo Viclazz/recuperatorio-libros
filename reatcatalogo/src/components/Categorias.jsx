@@ -1,13 +1,3 @@
-/*function Categorias() {
-	return (
-		<>
-			<categorias className="">esto es header</categorias>
-		</>
-	);
-}
-
-export default Categorias;*/
-
 import { useEffect, useState } from "react";
 
 function Categorias() {
@@ -32,7 +22,7 @@ return (
         return (
           <div className="card" key={`libros-categoria-${indice}`}>
             <div>
-              <div className="section-title">Titulo: {categoria.nombre}</div>
+              <div className="section-title">Nombre: {categoria.nombre}</div>
               <div className="section-title">cantidad: {categoria.cantidadLibros}</div>
             </div>
           </div>
