@@ -1,9 +1,10 @@
 :root {
 	--medio: #a9a587;
-	--pastel: #AD6A6C;
+	--pastel: #CAC4CE;
 	--morado: #616283;
 	--violeta: #730071;
 	--lavanda: #cb9cf2;
+	--lila: #8D86C9;
 }
 
 .App-header {
@@ -21,7 +22,7 @@
 
 .form-buscar {
     position: absolute;
-    bottom: 0rem;
+    bottom: 1rem;
     right: 20%;
 }
 .card-holder {
@@ -64,27 +65,33 @@
 .cuerpo{
     display: flex;
     flex-direction: row;
-    background-color: var(--pastel);
+    background-color: var(--medio);
 }
 
-/*.navbar {
+.navbar {
 	background-color: var(--pastel);
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	justify-content:flex-start;
+	right: 1rem;
+	max-width: 15rem;
 }
 
-/*.button {
-	margin: 0;
-	padding: 1px;
-	background-color: var(--violeta);
+.button {
+	margin: 0,5rem;
+	padding: 1rem;
+	max-width: 10rem;
+	background-color: var(--lila);
 	font-size: 1rem;
 	color: white;
 	font-weight: 700;
-	width: 6rem;
+	width: 20rem;
+	left: 1rem;
 	text-align: center;
 	box-shadow: 0rem 0rem .4rem var(--lavanda);
-	border: none;
-}*/
+	border: 1px;;
+	
+}
 
 .section{
 	margin-bottom: 1rem;
